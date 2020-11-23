@@ -11,11 +11,18 @@ export default class Game extends Component {
         }
     }
 
+    handleStartGame = () => {
+        this.setState({ isStarted: true })
+    }
+
     render() {
         return (
             <div>
                 <h1>React Minesweeper</h1>
-                <GameMenu started={this.state.isStarted}/>
+                <GameMenu 
+                    started={this.state.isStarted}
+                    startGame={this.handleStartGame}
+                />
             </div>
         )
     }

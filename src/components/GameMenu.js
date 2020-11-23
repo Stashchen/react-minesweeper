@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 
+import StartGameBtn from './buttons/StartGameBtn'
+
+
 export default class GameMenu extends Component {
     render() {
         return (
             <div>
-                <p>{ this.props.isStarted }</p>
+                { this.props.started ?
+                    'Game is started' :
+                    <StartGameBtn onClick={this.props.startGame} /> 
+                }
             </div>
         )
     }
